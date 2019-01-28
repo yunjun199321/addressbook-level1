@@ -1069,7 +1069,8 @@ public class AddressBook {
      * @return whether arg is a valid person email
      */
     private static boolean isPersonEmailValid(String email) {
-        return email.matches("\\S+@\\S+\\.\\S+"); // email is [non-whitespace]@[non-whitespace].[non-whitespace]
+//        return email.matches("\\S+@\\S+\\.\\S+"); // email is [non-whitespace]@[non-whitespace].[non-whitespace]
+        return email.matches("^(.+)@(.+)$"); // single email format
         //TODO: implement a more permissive validation
     }
 
