@@ -1042,13 +1042,19 @@ public class AddressBook {
      * ====================================================================
      */
 
+
+    private static final String REGEX_NAME = "^[a-zA-Z\\s]+";
+    private static final String REGEX_EMAIL = "^(.+)@(.+)$";
+    private static final String REGEX_PHONE = "\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}";
+
+
     /**
      * Returns true if the given string as a legal person name
      *
      * @param name to be validated
      */
     private static boolean isPersonNameValid(String name) {
-        return name.matches("(\\w|\\s)+");  // name is nonempty mixture of alphabets and whitespace
+        return name.matches(REGEX_NAME);  // name is nonempty mixture of alphabets and whitespace
         //TODO: implement a more permissive validation
     }
 
@@ -1058,7 +1064,7 @@ public class AddressBook {
      * @param phone to be validated
      */
     private static boolean isPersonPhoneValid(String phone) {
-        return phone.matches("\\d+");    // phone nonempty sequence of digits
+        return phone.matches(REGEX_PHONE);    // phone nonempty sequence of digits
         //TODO: implement a more permissive validation
     }
 
@@ -1070,9 +1076,10 @@ public class AddressBook {
      */
     private static boolean isPersonEmailValid(String email) {
 //        return email.matches("\\S+@\\S+\\.\\S+"); // email is [non-whitespace]@[non-whitespace].[non-whitespace]
-        return email.matches("^(.+)@(.+)$"); // single email format
+        return email.matches(REGEX_EMAIL); // single email format
         //TODO: implement a more permissive validation
     }
+
 
 
     /*
