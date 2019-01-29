@@ -183,13 +183,8 @@ public class AddressBook {
      */
     private static final ArrayList<String[]> ALL_PERSONS = new ArrayList<>();
 
-    /**
-     * Java regex are used in the code.
-     */
-    private static final String REGEX_EMAIL = "\"^(.+)@(.+)$\""; // simple email format
-    private static final String REGEX_NAME = "\"^[a-zA-Z\\\\s]+\""; // no number or special characters
-    private static final String REGEX_PHONE = "\\d{10}|(?:\\d{3}-){2}\\d{4}|\\" +
-            "(\\d{3}\\)\\d{3}-?\\d{4}"; // support different formatting of phone number
+
+
 
     /**
      * Stores the most recent list of persons shown to the user as a result of a user command.
@@ -1049,6 +1044,9 @@ public class AddressBook {
      * ====================================================================
      */
 
+    /**
+     * Java regex are used in the code.
+     */
 
     private static final String REGEX_NAME = "^[a-zA-Z\\s]+";
     private static final String REGEX_EMAIL = "^(.+)@(.+)$";
